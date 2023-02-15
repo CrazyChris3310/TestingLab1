@@ -22,6 +22,7 @@ public class Alien implements Killable {
         }
         weapon.shoot();
         alien.health -= weapon.getDamage();
+        System.out.println(name + " shoots " + alien.getName());
     }
 
     public boolean isDead() {
@@ -30,9 +31,16 @@ public class Alien implements Killable {
 
     public void damage(int damage) {
         health -= damage;
+        System.out.println(name + "'s health is " + health);
     }
 
     public int getHealth() {
         return health;
+    }
+
+    public String getName() { return name; }
+
+    public void offence(Alien alien) {
+        System.out.println(name + " says something about " + alien.getName() + "'s mom...");
     }
 }

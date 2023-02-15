@@ -1,9 +1,7 @@
 package domain;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 public class StarCruiser implements Killable {
     private final String name;
@@ -14,6 +12,7 @@ public class StarCruiser implements Killable {
     public StarCruiser(String name, int health) {
         this.name = name;
         this.health = health;
+        System.out.println("StarCruiser " + name + " flies by");
     }
 
     public void addWeapon(Weapon weapon) {
@@ -22,6 +21,8 @@ public class StarCruiser implements Killable {
 
 
     public void shoot(Killable victim) {
+        System.out.println("StarCruiser " + name + " shoots into " + victim.getName());
+
         if (weapons.isEmpty()) {
             return;
         }
@@ -45,9 +46,19 @@ public class StarCruiser implements Killable {
     @Override
     public void damage(int damage) {
         health -= damage;
+        System.out.println(name + "'s health is " + health);
     }
 
     public List<Weapon> getWeapons() {
         return weapons;
+    }
+
+    public int getHealth() {
+        return this.health;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 }

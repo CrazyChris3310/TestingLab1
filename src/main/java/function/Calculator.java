@@ -1,7 +1,5 @@
 package function;
 
-import java.math.BigInteger;
-
 public class Calculator {
 
     public static final double PRECISION = 0.00001;

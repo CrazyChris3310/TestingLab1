@@ -28,6 +28,7 @@ class AlienTest {
         assertEquals(0, weapon.getAmmo());
     }
 
+    @Test
     void testShootWithNoAmmo() {
         Alien alien = new Vhurg("Vhurg", 8);
         Alien guvnut = new Guvnut("Guvnut", 8, "green");

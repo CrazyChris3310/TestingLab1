@@ -20,6 +20,7 @@ public class Weapon {
 
     public void shoot() {
         if (ammo <= 0) {
+            System.out.println("No ammo left");
             throw new NoAmmoException();
         }
         ammo--;
